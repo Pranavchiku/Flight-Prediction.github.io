@@ -226,7 +226,7 @@ input, select, textarea {
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #348cb2 url("images/bg.jpg") bottom left;
+		background: #348cb2 url("images/bg17.jpg") bottom left;
 		/* background: black black; */
 		background-repeat: repeat-x;
 		height: 100%;
@@ -550,7 +550,7 @@ input, select, textarea {
 		position: relative;
 		text-align: center;
 		/* top: -7em; */
-		vertical-align: top;
+		vertical-align: middle;
 		width: 90%;
 	}
 
@@ -562,52 +562,65 @@ input, select, textarea {
 		}
 		#header label {
 			font-size: 2.0em;
-			font-weight: 300;
+			font-weight: 600;
 			letter-spacing: -0.035em;
 			line-height: 1em;
 			padding:1%;	
 		}
 		#header select {
 			font-size: 2em;
-			font-weight: 300;
+			font-weight: 600;
 			letter-spacing: -0.035em;
 			line-height: 1em;
-			color:black;
+			color: black;
 			width: 200px;
 			text-align: center;
 			margin-left: 1px;
-			background-color: rgba(0, 0, 0, 0);
+			background-color: white;
 			border-radius: 25%;
-			border-color:rgba(0, 0, 0, 0);
+			border-color:white;
 		}
 		#header .dateSelect{
 			width: 200px;
 			text-align: center;
 			margin-left: 1px;
-			background-color: rgba(0, 0, 0, 0);
+			background-color: white;
+			color: black;
 			border-radius: 25%;
 			border-color:rgba(0, 0, 0, 0);
 		}
+		#header input{
+			color: black;
+			font-weight: 600;
+			font-size: 20;
+		}
+		#header input[type=time]{
+			color: black;
+			font-weight: 600;
+			font-size: 20;
+		}
+
 		#header .timeSelect{
 			width: 200px;
 			text-align: center;
 			margin-left: 1px;
-
-			background-color: rgba(0, 0, 0, 0);
+			color:black;
+			background-color: white;
 			border-radius: 25%;
 			border-color:rgba(0, 0, 0, 0);
 		}
 		#header .durationSelect{
-			color:white;
+			color:black;
 			width: 200px;
 			text-align: center;
 			margin-left: 1px;
-			background-color: rgba(0, 0, 0, 0);
+			background-color: white;
 			border-radius: 25%;
 			border-color:rgba(0, 0, 0, 0);
 		}
 		#header .durationSelect::placeholder{
-			color:white;
+			color:black;
+			font-weight:400;
 			width: 200px;
 			text-align: center;
 			margin-left: 1px;
@@ -616,13 +629,13 @@ input, select, textarea {
 			border-color:rgba(0, 0, 0, 0);
 		}
 		#header .btn{
-            /* background: #FF416C; */
+            /* background: white; */
 			background: rgba(0, 0, 0, 0);
             box-shadow: 0 0 30px rgba(0,0,0,0.253);
             /* background: linear-gradient(to right, #FF3B2B,#FF416C); */
 			/* background: rgba(0, 0, 0, 0); */
-            border: none; color: black;
-			font-weight: 400;
+            border: none; color: white;
+			font-weight: 600;
             padding: 2px 20px;
             margin-top: 5px; border-radius: 20px;
             position: relative; cursor: pointer;
@@ -645,13 +658,14 @@ input, select, textarea {
 		#header .box{
             width:600px;height:200px;
             box-shadow: 0 0 30px rgba(0,0,0,0.082);
-			background-color: rgba(0, 0, 0, 0);
+			background-color: white;
             border-radius:20px;
             display: flex; justify-content: center;
             align-items: center;
-            flex-direction: column;
+            /* flex-direction: column; */
             margin-top:10px;
             margin-right:10px;
+			left: 50%;
 			color: black;
 			
         }
@@ -664,7 +678,7 @@ input, select, textarea {
             margin: 30px 20px; text-align: center;
             font-size: 3.00em;
 			font-weight: 600;
-			color: black;
+			color: white;
         }
 		
 		
