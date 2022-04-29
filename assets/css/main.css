@@ -226,7 +226,7 @@ input, select, textarea {
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #348cb2 url("images/bg17.jpg") bottom left;
+		background: #348cb2 url("images/bg24.jpg") bottom left;
 		/* background: black black; */
 		background-repeat: repeat-x;
 		height: 100%;
@@ -559,6 +559,7 @@ input, select, textarea {
 			font-weight: 900;
 			letter-spacing: -0.035em;
 			line-height: 1em;
+			color:black;
 		}
 		#header label {
 			font-size: 2.0em;
@@ -566,6 +567,10 @@ input, select, textarea {
 			letter-spacing: -0.035em;
 			line-height: 1em;
 			padding:1%;	
+			color:black;
+			background-color:rgba(0, 0, 0, 0);
+			border-radius: 25%;
+
 		}
 		#header select {
 			font-size: 2em;
@@ -630,11 +635,11 @@ input, select, textarea {
 		}
 		#header .btn{
             /* background: white; */
-			background: rgba(0, 0, 0, 0);
+			background: white;
             box-shadow: 0 0 30px rgba(0,0,0,0.253);
             /* background: linear-gradient(to right, #FF3B2B,#FF416C); */
 			/* background: rgba(0, 0, 0, 0); */
-            border: none; color: white;
+            border: none; color: black; font-weight:600;
 			font-weight: 600;
             padding: 2px 20px;
             margin-top: 5px; border-radius: 20px;
@@ -678,7 +683,7 @@ input, select, textarea {
             margin: 30px 20px; text-align: center;
             font-size: 3.00em;
 			font-weight: 600;
-			color: white;
+			color: black;
         }
 		
 		
