@@ -12,10 +12,21 @@
 
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-<style>
-
-</style>
+    
+    <style>
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            text-align:center;
+          }
+          
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+    </style>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -26,95 +37,88 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Lets Fly!!</h1>
-						<!-- <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>  -->
+						<!-- <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>  -->   
+                        <div class="row">
+                            <div class="column">
+                                <label for="from">From:</label>
+                                <select name="from" id="from">
+                                    <option value="value">--Select--</option>
+                                    <option value=0>Banglore</option>
+                                    <option value=1>Chennai</option>
+                                    <option value=2>Delhi</option>
+                                    <option value=3>Kolkata</option>
+                                    <option value=4>Mumbai</option>
+                                </select>
+                            </div>
+                            <div class="column">
 
-						<nav>
-							<ul>
-								
-								<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
-								
-							</ul>
-						</nav>
-						
-						<ul>
-						<label for="from">From:</label>
-								<select name="from" id="from">
-									<option value="value">--Select--</option>
-									<option value=0>Banglore</option>
-									<option value=1>Chennai</option>
-									<option value=2>Delhi</option>
-									<option value=3>Kolkata</option>
-									<option value=4>Mumbai</option>
+                                <label for="to">To:</label>
+                                    <select name="to" id="to">
+                                        <option value="value">--Select--</option>
+                                        <option value=0>Banglore</option>
+                                        <option value=1>Chennai</option>
+                                        <option value=2>Delhi</option>
+                                        <option value=3>Kolkata</option>
+                                        <option value=4>Mumbai</option>
+                                    </select>   
 
-						</select>
-						<label for="to">To:</label>
-								<select name="to" id="to">
-									<option value="value">--Select--</option>
-									<option value=0>Banglore</option>
-									<option value=1>Chennai</option>
-									<option value=2>Delhi</option>
-									<option value=3>Kolkata</option>
-									<option value=4>Mumbai</option>
-						</select>
-						<label for="date">date:</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="column">
+                                <label for="date">date:</label>
 								<input class="dateSelect" type ="date" id="dateHere" name="dateHere"/>
-						</select>
-						
-						</ul>
-						<br>
-						<ul>
-							<label for="depTime">Dept. Time:</label>
+                            </div>
+                            <div class="column">
+                                <label for="duration">duration:</label>
+                                <input type="text" class="durationSelect" placeholder="xxH yyM"id="duration" name="duration"/>                          
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="depTime">Dept. Time:</label>
 								<input type="time" class="timeSelect" id="deptTimeHere" name="deptTimeHere"/>
+                            </div>
+                            <div class="column">
+                                <label for="arrTime">Arrival Time:</label>
+                                <input type="time" class="timeSelect" id="arrivalTimeHere" name="arrivalTimeHere"/>                                                  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="totalStops">TotalStops:</label>
 
-							<label for="arrTime">Arrival Time:</label>
-							<input type="time" class="timeSelect" id="arrivalTimeHere" name="arrivalTimeHere"/>
-							<label for="duration">duration:</label>
-							<input type="text" class="durationSelect" placeholder="xxH yyM"id="duration" name="duration"/>
-							
-							<!-- <select name="smoking" id="smoking">
-								<option value="value">--Select--</option>
-								<option value=0>Formerly Smoked</option>
-								<option value=1>Never Smoked</option>
-								<option value=2>Smokes</option>
-								<option value=3>Don't Know About It</option>
-							</select> -->
-						</ul>
-						<br>
-						<ul>
-							<label for="totalStops">TotalStops:</label>
+                                <select name="totalStops" id="totalStops">
+                                    <option value="value">--Select--</option>
+                                    <option value=0>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                </select>
+                            </div>
+                            <div class="column">
+                                <label for="airlint">Airline:</label>
 
-							<select name="totalStops" id="totalStops">
-								<option value="value">--Select--</option>
-								<option value=0>0</option>
-								<option value=1>1</option>
-								<option value=2>2</option>
-								<option value=3>3</option>
-								<option value=4>4</option>
-							</select>
-							<label for="airlint">Airline:</label>
-
-							<select name="airline" id="airline">
-								<option value="value">--Select--</option>
-								<option value=0>Air Asia</option>
-								<option value=1>Air India</option>
-								<option value=2>GoAir</option>
-								<option value=3>Indigo</option>
-								<option value=4>Jet Airways</option>
-								<option value=5>Jet Airways Business</option>
-								<option value=6>Multiple carriers</option>
-								<option value=7>Multiple carriers Premium economy</option>
-								<option value=8>SpiceJet</option>
-								<option value=9>Trujet</option>
-								<option value=10>Vistara</option>
-								<option value=11>Vistara Premium economy</option>
-
-							</select>
-						</ul>
-						<br>
+                                <select name="airline" id="airline">
+                                    <option value="value">--Select--</option>
+                                    <option value=0>Air Asia</option>
+                                    <option value=1>Air India</option>
+                                    <option value=2>GoAir</option>
+                                    <option value=3>Indigo</option>
+                                    <option value=4>Jet Airways</option>
+                                    <option value=5>Jet Airways Business</option>
+                                    <option value=6>Multiple carriers</option>
+                                    <option value=7>Multiple carriers Premium economy</option>
+                                    <option value=8>SpiceJet</option>
+                                    <option value=9>Trujet</option>
+                                    <option value=10>Vistara</option>
+                                    <option value=11>Vistara Premium economy</option>
+    
+                                </select>                                            
+                            </div>
+                        </div>
 						<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
 
 						<script>
