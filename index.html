@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Flight Price Prediction</title>
@@ -18,7 +13,7 @@
             float: left;
             width: 50%;
             padding: 10px;
-            text-align:center;
+            text-align:left;
           }
           
           .row:after {
@@ -26,6 +21,17 @@
             display: table;
             clear: both;
           }
+		  .arrow {
+			border: solid black;
+			border-width: 0 3px 3px 0;
+			display: inline-block;
+			padding: 3px;
+			}
+
+			.right {
+			transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+			}
     </style>
 	</head>
 	<body class="is-preload">
@@ -37,12 +43,14 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Lets Fly!!</h1>
-						<!-- <p>Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this</p>  -->   
+
                         <div class="row">
                             <div class="column">
-                                <label for="from">From:</label>
-                                <select name="from" id="from">
-                                    <option value="value">--Select--</option>
+                                <label for="from" style="position:relative;
+								left: 35%;">From:</label>
+                                <select name="from" id="from" style="position:relative;
+								left: 35%;">
+                                    
                                     <option value=0>Banglore</option>
                                     <option value=1>Chennai</option>
                                     <option value=2>Delhi</option>
@@ -52,9 +60,11 @@
                             </div>
                             <div class="column">
 
-                                <label for="to">To:</label>
-                                    <select name="to" id="to">
-                                        <option value="value">--Select--</option>
+                                <label for="to" style="position:relative;
+								left: 20%;">To:</label>
+                                    <select name="to" id="to" style="position:relative;
+									left: 20%;">
+                                        
                                         <option value=0>Banglore</option>
                                         <option value=1>Chennai</option>
                                         <option value=2>Delhi</option>
@@ -67,30 +77,40 @@
                         
                         <div class="row">
                             <div class="column">
-                                <label for="date">date:</label>
-								<input class="dateSelect" type ="date" id="dateHere" name="dateHere"/>
+                                <label for="date" style="position:relative;
+								left: 35%;">date:</label>
+								<input class="dateSelect" type ="date" id="dateHere" name="dateHere" style="position:relative;
+								left: 35%;"/>
                             </div>
                             <div class="column">
-                                <label for="duration">duration:</label>
-                                <input type="text" class="durationSelect" placeholder="xxH yyM"id="duration" name="duration"/>                          
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="column">
-                                <label for="depTime">Dept. Time:</label>
-								<input type="time" class="timeSelect" id="deptTimeHere" name="deptTimeHere"/>
-                            </div>
-                            <div class="column">
-                                <label for="arrTime">Arrival Time:</label>
-                                <input type="time" class="timeSelect" id="arrivalTimeHere" name="arrivalTimeHere"/>                                                  
+                                <label for="duration" style="position:relative;
+								left: 20%;">duration:</label>
+                                <input type="text" class="durationSelect" placeholder="xxH yyM"id="duration" name="duration" style="position:relative;
+								left: 20%;"/>                          
                             </div>
                         </div>
                         <div class="row">
                             <div class="column">
-                                <label for="totalStops">TotalStops:</label>
+                                <label for="depTime" style="position:relative;
+								left: 35%;">Dept. Time:</label>
+								<input type="time" class="timeSelect" id="deptTimeHere" name="deptTimeHere" style="position:relative;
+								left: 35%;"/>
+                            </div>
+                            <div class="column">
+                                <label for="arrTime" style="position:relative;
+								left: 20%;">Arrival Time:</label>
+                                <input type="time" class="timeSelect" id="arrivalTimeHere" name="arrivalTimeHere" style="position:relative;
+								left: 20%;"/>                                                  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="totalStops" style="position:relative;
+								left: 35%;">TotalStops:</label>
 
-                                <select name="totalStops" id="totalStops">
-                                    <option value="value">--Select--</option>
+                                <select name="totalStops" id="totalStops" style="position:relative;
+								left: 35%;">
+                                    
                                     <option value=0>0</option>
                                     <option value=1>1</option>
                                     <option value=2>2</option>
@@ -99,10 +119,12 @@
                                 </select>
                             </div>
                             <div class="column">
-                                <label for="airlint">Airline:</label>
+                                <label for="airlint" style="position:relative;
+								left: 20%;">Airline:</label>
 
-                                <select name="airline" id="airline">
-                                    <option value="value">--Select--</option>
+                                <select name="airline" id="airline" style="position:relative;
+								left: 20%;">
+                                    
                                     <option value=0>Air Asia</option>
                                     <option value=1>Air India</option>
                                     <option value=2>GoAir</option>
@@ -177,12 +199,11 @@
 								input=[parseInt(airline),parseInt(dateOfJourney),parseInt(source),parseInt(destination),parseInt(depTime),parseInt(arrivalTime),parseInt(duration),parseInt(totalStops),parseInt(additionalInfo)];
 								window.model.predict([tf.tensor(input).reshape([1,9])]).array().then(function(scores){
 									scores = scores[0];
-									//predicted = scores.indexOf(Math.max(...scores));
-									// $('#number').html(predicted);
-									//console.log(predicted);
 									console.log(scores[0]);
 									document.getElementById('predictedPrize').style.display="block";
-									document.getElementById('predictedPrize').innerHTML="Predicted Price is : " + scores[0].toString(); 
+									document.getElementById('boxPricePredicted').style.display="block";
+
+									document.getElementById('predictedPrize').innerHTML="Predicted Price is : " + scores[0].toFixed(2).toString(); 
 
 								});
 
@@ -192,9 +213,12 @@
 
 						<button type="submit" onclick="predict()"class="btn">Predict</button>
     					<!-- <div class="box" id="boxPredictedPrize"> -->
-						<h2 class="center" id="predictedPrize" style="display:none;">
-							Predicted Price is 
-						</h2>
+						<div class="box" id="boxPricePredicted" style="position:relative;
+						left: 33%;display:none;">
+							<h2 id="predictedPrize" style="display:none;">
+								Predicted Price is 
+							</h2>
+						</div>
 						<!-- </div> -->
 
 					</header>
