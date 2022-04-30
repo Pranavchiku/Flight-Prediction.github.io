@@ -141,6 +141,8 @@
                                 </select>                                            
                             </div>
                         </div>
+						
+						<!-- Script to predict the Price Starts Here-->
 						<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
 
 						<script>
@@ -148,20 +150,54 @@
 								window.model = model;
 								console.log("my model loaded");
 								});
+
+							function validate(){
+								var dateHere = document.getElementById('dateHere').value;
+								var duration = document.getElementById('duration').value;
+								var depTime = document.getElementById('deptTimeHere').value;
+								var arrivalTime = document.getElementById('arrivalTimeHere').value;
+
+								if(dateHere==''){
+									alert("Enter the date of journey");
+								}
+								else if(duration==''){
+									alert("Enter the duration of journey");
+								}
+								else if(depTime==''){
+									alert("Enter the departure time of journey");
+								}
+								else if(arrivalTime==''){
+									alert("Enter the arrival time");
+								}
+								else{
+									predict();
+								}
+							}
 							function predict(){
+								// Fetching data from front-end and Pre-Processing
 								var input=[];
+
 								var airline=document.getElementById("airline").value;
+
 								var dateOfJourney=((Date.parse(document.getElementById("dateHere").value)/1000)-1551398400.0)/((Date.parse(document.getElementById("dateHere").value)/1000)-1551398400.0);
+
 								var source=document.getElementById("from").value;
+
 								var destination=document.getElementById("to").value;
+
 								var depTime=document.getElementById("deptTimeHere").value;
+
 								var a = depTime.split(':');
+
 								depTime=(+a[0])*3600 + (+a[1])*60;
 								depTime=(depTime-0)/(86340-0);
+
 								var arrivalTime=document.getElementById("arrivalTimeHere").value;
+
 								var a = arrivalTime.split(':');
 								arrivalTime=(+a[0])*3600 + (+a[1])*60;
 								arrivalTime=(arrivalTime-0)/(86340-0);
+
 								var duration=document.getElementById('duration').value;
 								var a = duration.split(' ');
 								if(a.length==2){
@@ -192,11 +228,14 @@
 								else{
 									duration = (duration-171600)/(171600-4500);
 								}
-								console.log(arrivalTime);
-								console.log(duration);
+
 								var totalStops=document.getElementById('totalStops').value;
 								var additionalInfo=7;
+
 								input=[parseInt(airline),parseInt(dateOfJourney),parseInt(source),parseInt(destination),parseInt(depTime),parseInt(arrivalTime),parseInt(duration),parseInt(totalStops),parseInt(additionalInfo)];
+
+								// Convert input array to tensor of shape 1x9 and predict the price
+
 								window.model.predict([tf.tensor(input).reshape([1,9])]).array().then(function(scores){
 									scores = scores[0];
 									console.log(scores[0]);
@@ -211,7 +250,9 @@
 
 						</script>
 
-						<button type="submit" onclick="predict()"class="btn">Predict</button>
+						<!-- Script to predict the Price Ends Here -->
+
+						<button type="submit" onclick="validate()"class="btn">Predict</button>
     					<!-- <div class="box" id="boxPredictedPrize"> -->
 						<div class="box" id="boxPricePredicted" style="position:relative;
 						left: 33%;display:none;">
