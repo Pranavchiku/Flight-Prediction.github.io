@@ -3,9 +3,8 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10mQ1uHgBIf-DJkldPadDwd9CCGApB1_B?usp=sharing)
 ## Overview:
-In this Project, we’ve analyzed the flight fare prediction with Machine Learning dataset using essential exploratory data analysis techniques and drawn some predictions about the price of the flight based on some features such as what type of airline it is, what is the arrival time, what is the departure time, the duration of the flight, source, destination and more.
+In order to implement the concepts learnt in the PRML Course, I tried to develop a machine learning algorithm on the given dataset using essential exploratory data analysis techniques and drawn some predictions about the price of the flight based on some features such as what type of airline it is, what is the arrival time, what is the departure time, the duration of the flight, source, destination and more and then for making it of use of common people deployed using github pages.
 
-Finally, We deployed this project using github, the effective implementation is essential to see the true benefits and impact of machine learning models
 ## Built using:
 - [Scikit Learn: ](https://scikit-learn.org/stable/) ML Library used
 - [TensorFlow Keras: ](https://www.tensorflow.org/api_docs/python/tf/keras) ML Libraries used
