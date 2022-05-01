@@ -22,6 +22,12 @@ This is the main file with all the preprocessing, EDA, various Machine learning 
 - Extra regressor model to determine feature importance
 - Dividing the dataset into train and test
 - Applying Machine Learning models
+  - Decision Tree Regressor
+  - Random Forest Regressor
+  - XG Boost Regressor
+  - Light GBM Regressor
+  - Support vector machine
+  - Linear regression
 - Applying Deep Learning models
   - Saving the weights and .json file for deployment
 ## How to run:
